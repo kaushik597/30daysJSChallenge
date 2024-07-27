@@ -1,0 +1,5 @@
+{
+    "scripts":{
+        "start": "PORT=1235 parcel index.html"
+
+}}
