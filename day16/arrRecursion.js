@@ -47,3 +47,4 @@ function findMax(arr, index=0, max=-Infinity){
 
 const m = findMax([100,2,8,11,3,6])
 console.log(m);
+
