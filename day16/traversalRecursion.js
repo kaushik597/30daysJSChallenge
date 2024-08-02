@@ -55,38 +55,38 @@
 
 
 
-//recursion
-// let a=[1,2,4,56,77,88];
-// let low=0;
-// let high= a.length-1;
-// let mid
-// console.log(low,high);
-// function binarySearchRecursion(a,low,high, ele){
-//     console.log(low,high);
-//     debugger;
-//     if(high>=low){
-//         mid= Math.floor((low+high)/2);
-//         console.log(mid);
-//         if(ele==a[mid]){
-//             return "element is at index ==> "+mid;
-//         }
-//         else if(ele>a[mid]){
-//           return binarySearchRecursion(a, mid+1,high)
-//         }
+recursion
+let a=[1,2,4,56,77,88];
+let low=0;
+let high= a.length-1;
+let mid
+console.log(low,high);
+function binarySearchRecursion(a,low,high, ele){
+    console.log(low,high);
+    debugger;
+    if(high>=low){
+        mid= Math.floor((low+high)/2);
+        console.log(mid);
+        if(ele==a[mid]){
+            return "element is at index ==> "+mid;
+        }
+        else if(ele>a[mid]){
+          return binarySearchRecursion(a, mid+1,high)
+        }
        
-//         return binarySearchRecursion(a, low, mid-1)
+        return binarySearchRecursion(a, low, mid-1)
         
 
     
-//     }
-//     else {
-//         return "element not found"
-//     }
+    }
+    else {
+        return "element not found"
+    }
  
-// }
+}
 
-// const recResult= binarySearchRecursion(a,low,high,4)
-// console.log(recResult);
+const recResult= binarySearchRecursion(a,low,high,4)
+console.log(recResult);
 
 
 //count the occurences
