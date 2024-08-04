@@ -1,10 +1,4 @@
-// let result='';
-// const strFunction =(a)=>{
-    
-//     return strFunction(a);
-// }
-// const strResult= strFunction("lailam")
-// console.log(strResult);
+
 
 let result='';
 function test(a){
