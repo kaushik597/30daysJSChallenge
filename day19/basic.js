@@ -23,9 +23,51 @@ console.log(str4.match(numSeqregex));
 
 //match us phone number
 const phneNo="(205) 396-0000"
-const phnRegex= /\(?((?<area>)\d{3})\)?[ -]((?<office>)\d{3}-((?<line>)\d{4}))/g
+const phnRegex= /\(?(\d{3})\)?\s(\d{3})-(\d{4})/
 const no=phneNo.match(phnRegex)
-// const[$area,$office,$line]=no
-console.log(no);
+// const [area,office,line]= phneNo.match(/\((\d{3})\)\s(\d{3})-(\d{4})/)
+const[,area,office,line]=no
+console.log("-------",area,"****",office,"^^^^",line);
+// console.log(no);
+
+//capture username and domain from email
+const email="ThuglakSultan@tusstuss.com"
+const mailRegex=/(\w+)@(\w+).com/
+const [,user,domain]=email.match(mailRegex)
+console.log(user,domain);
+
+
+//assertions
+//Match a word only if it is at the beginning of a string
+
+const asserTstring ="Kaushik is great he will achieve everything he needs in life"
+const assertRegex= /^Kaushik/
+const result=asserTstring.match(assertRegex)
+console.log(result);
+console.log(("test").match(assertRegex));
+
+const assertRegex2=/lifes$/
+
+const result1= asserTstring.match(assertRegex2)
+console.log(result1);
+
+
+//password validator
+const pwdRegex=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W).+$/
+const pwd="tT1."
+const pwdResult= pwd.match(pwdRegex);
+console.log(pwdResult,",,,,");
+
+pwd?console.log("valid password"):console.log("invalid password");
+
+const url="https://www.linkedin.com/in/kaushikjallam/"
+const urlRegex= /^(http?s\:\/\/)(www)?.([a-zA-Z0-9\W]+)\.([a-zA-Z]{2,})(\/[a-zA-Z0-9-._~:\/?#\[\]@!$&'()*+,;=%]*)?$/
+console.log(url.match(urlRegex));
+console.log("ABC".match(urlRegex));
+
+
+
+
+
 
 
