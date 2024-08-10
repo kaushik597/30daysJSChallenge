@@ -1,4 +1,4 @@
-let apiKey = "4f29e24f8c6bc89b8af4260106786ad5";
+let apiKey = "ur_api_key"; //replace with your api key
 const showCity= document.querySelector("#city");
 const weather = document.querySelector("#weather");
 const temp= document.querySelector("#temp")
