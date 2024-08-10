@@ -1,0 +1,17 @@
+
+
+#container{
+    border: 1px solid beige;
+    width: 50%;
+    margin-left: 25%;
+    padding: 10px;
+    box-shadow: 5px 5px rgb(118, 116, 112);
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+
+}
+
+#title{
+    text-align: center;
+}
