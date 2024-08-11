@@ -1,0 +1,44 @@
+body{
+    cursor: pointer;
+    background-color: black;
+    font-family: 'Roboto','Bona Nova SC', sans-serif;
+
+}
+
+#movieInput,#search{
+    margin: 5px;
+    padding: 10px;
+}
+.viewMore{
+    display: none;
+}
+
+#resContainer{
+    width: 30%;
+}
+
+p,h2,div,span{
+    color:white
+}
+button{
+    background-color: #FFD700;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.movieContainer{
+    border: 1px solid white;
+    width: 20%;
+    position: absolute;
+    top:65px;
+    left:500px
+}
+
+#img{
+    box-shadow: 5px 10px 8px gray;
+}
+
+h4{
+    color: #FFD700
+}
