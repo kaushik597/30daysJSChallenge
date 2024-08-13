@@ -2,3 +2,5 @@
 .parcel-cache
 /dist
 .cache
+/day26/chat-application/node_modules
+/todos
