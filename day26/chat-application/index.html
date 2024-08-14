@@ -6,29 +6,18 @@
     <title>Websocket client</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<!-- <script>
-    const socket = new WebSocket('ws://localhost:3000');
-    socket.addEventListener('open', (event)=>{
-        socket.send("Hello websocket server")
-    })
 
-    socket.addEventListener("message",(event)=>{
-        console.log('Received:',event.data);
-        
-    })
-    socket.addEventListener('close',(event)=>[
-        console.log("connection is closed")
-        
-    ])
-</script> -->
 <body>
     <div id="chat-window">
         <div id="output">
 
         </div>
-        <input id="username" type="text" placeholder="enter your name...">
-        <input id="message" type="text" placeholder="type a message....">
-        <button id="send">send</button>
+        <div id="controls">
+            <input id="username" type="text" placeholder="enter your name...">
+            <input id="message" type="text" placeholder="type a message....">
+            <button id="send">send</button>
+        </div>
+     
     </div>
     <script src="script.js" ></script>
 </body>
