@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Websocket client</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<script>
+<!-- <script>
     const socket = new WebSocket('ws://localhost:3000');
     socket.addEventListener('open', (event)=>{
         socket.send("Hello websocket server")
@@ -19,8 +20,16 @@
         console.log("connection is closed")
         
     ])
-</script>
+</script> -->
 <body>
-    
+    <div id="chat-window">
+        <div id="output">
+
+        </div>
+        <input id="username" type="text" placeholder="enter your name...">
+        <input id="message" type="text" placeholder="type a message....">
+        <button id="send">send</button>
+    </div>
+    <script src="script.js" ></script>
 </body>
 </html>
