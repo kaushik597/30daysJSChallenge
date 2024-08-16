@@ -47,13 +47,6 @@ socket.addEventListener('message',(event)=>{
         const displaySender = isOwnMessage ? 'You' : sender;
         displayMessage(displaySender, messageText);
 
-    console.log("message event listener script.js",event.data)
-
-    // const messageElement = document.createElement('p');
-    // messageElement.textContent=message;
-    // messageElement.className=`message ${isOwnMessage ? 'own':'other'}`
-    // output.appendChild(messageElement);
-    // output.scrollTop= output.scrollHeight
     }
    
 })
