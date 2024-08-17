@@ -1,12 +1,18 @@
+
 const tasks=[];
 let taskIndex=0;
 const taskContainer = document.querySelector("#task-container");
 const p= document.createElement("p");
 const modalContent = document.querySelector('.modal-content')
+const modalTitle= document.querySelector("#modal-title")
+const modalDesc= document.querySelector("#modal-desc")
+const modalDue= document.querySelector("#modal-due");
+const modalClose= document.querySelector("#close")
+
 let showBtn;
 let editBtn;
 let showTaskCount=0;
-// let editId;
+let currTitleValue=''
 
 
 
@@ -18,34 +24,29 @@ const dt= document.querySelector("#date");
 const title=document.querySelector('#title')
 const desc= document.querySelector("#desc")
 const submit= document.querySelector("#submit")
-const update= document.querySelector("#update")
+let update= document.querySelector("#update")
 submit.addEventListener("click",(event)=>{
     
     event.preventDefault()
     tasks[taskIndex]={"title":title.value,"description":desc.value,"date":dt.value}
     if(tasks.length>0){
-    //taskContainer.removeChild(p)
     p.textContent=''
     }
-    console.log("tasks",tasks);
-    displayTask(tasks[taskIndex])
-    //showTaskModal()
-    console.log("showbtn",showBtn);
+    createContainer(tasks[taskIndex])
 
    taskIndex++
 })
 
-function displayTask(task){
-    console.log("task",task.title);
-    
+
+function createContainer(task){
     const firstDiv= document.createElement("div");
 //creating checkbox and show button
 //input
-// for(let i=0;i<tasks.length;i++){
     const div= document.createElement("div");
     const input = document.createElement("input");
     input.setAttribute("type","checkbox");
-    input.setAttribute("id",task.title);
+    let checkBoxId=task.title.replace(/\s/g,'')
+    input.setAttribute("id",checkBoxId);
     input.setAttribute("name",task.title);
     input.setAttribute("value","")
     const label = document.createElement("label");
@@ -56,8 +57,7 @@ function displayTask(task){
     firstDiv.appendChild(div);
     //show btn
     showBtn= document.createElement("button");
-    const idValue=task.title.replace(/\s/g, '')+ Math.floor(Math.random()*5);
-    console.log(idValue);
+    let idValue=task.title.replace(/\s/g, '')+ Math.floor(Math.random()*5);
     showBtn.setAttribute("id",idValue)
     showBtn.textContent="Show task";
     firstDiv.appendChild(showBtn)
@@ -73,75 +73,135 @@ function displayTask(task){
     title.value='';
     desc.value='';
     dt.value=''
+ 
     const showTask=document.querySelector(`#${idValue}`)
     showTask.addEventListener("click",()=>openModal(task.title,task.description,task.date))
     const editTask = document.querySelector(`#${editId}`);
-    editTask.addEventListener("click",()=>editModal(tasks,editId))
+    editTask.addEventListener("click",()=>editModal(editId,idValue,checkBoxId))
+
+    const deleteTask= document.querySelector(`#${checkBoxId}`);
+    deleteTask.addEventListener("click",()=>deleteTheTask(checkBoxId))
+}
+
+function deleteTheTask(id){
+    const firstDiv = document.querySelector("#task-container")
+    console.log(id);
+    
+    console.log(tasks);
+    const div= document.createElement("div");
+    const p= document.createElement("p");
+    p.textContent="are you sure you want to delete"
+    const yes= document.createElement("button");
+    yes.textContent="yes"
+    const no= document.createElement("button");
+    no.setAttribute("id","no")
+    no.textContent="no"
+    
+    const element = document.querySelector(`#${id}`);
+    const value= element.getAttribute("name");
+    console.log("checkbox value", value);
+    let index= tasks.findIndex(ele=>ele.title===value);
+    console.log(index);
+    div.appendChild(p)    
+    div.appendChild(yes)    
+    div.appendChild(no)  
+   
+        firstDiv.children[index+1].appendChild(div)
+
+    yes.addEventListener("click",(event)=>{
+       
+    
+    
+        if(index>=-1&&index<tasks.length){
+            tasks.splice(index,1)
+        }
+        console.log("tasks",tasks);
+        taskContainer.removeChild(taskContainer.children[index+1])
+    })
+   no.addEventListener("click",(event)=>{
+div.style.display="none"
+console.log(element.value);
+element.checked = false;
+   })
+    
+    
+    
+}
+
+function displayTask(task,editId,idValue,checkBoxId){
+    console.log("display tasks",tasks,task);
+    const editLabel=document.querySelector(`#${editId}`).previousSibling.previousSibling.lastChild
+    const editInput=document.querySelector(`#${editId}`).previousSibling.previousSibling.firstChild
+    editInput.setAttribute("id",task.title)
+    editInput.setAttribute("name",task.title)
+
+    editLabel.textContent=task.title;
+    const showTask=document.querySelector(`#${idValue}`)
+    showTask.addEventListener("click",()=>openModal(task.title,task.description,task.date))
+    const editTask = document.querySelector(`#${editId}`);
+    editTask.addEventListener("click",()=>editModal(editId))
+    console.log("checkbox id",checkBoxId);
+    
+    const deleteTask= document.querySelector(`#${checkBoxId}`);
+    deleteTask.addEventListener("click",()=>deleteTheTask(checkBoxId))
+
 
 }
+
+
     
-// }
 
 function openModal(titleValue,descValue,dtValue){
-    showTaskCount++;
-    console.log("count",showTaskCount);
-    let close
-    
-console.log("openModal titlevalue",titleValue);
-modalContent.style.display="block"
-if(showTaskCount==1){
-    const title= document.createElement("p");
-    title.textContent=`Title: ${titleValue}`;
-    const desc= document.createElement("p");
-    desc.textContent=`Description: ${descValue}`;
-    const dt= document.createElement("p");
-    dt.textContent=`Due: ${dtValue}`
-    close= document.createElement("p");
-    close.textContent="X";
-    close.setAttribute("id","close")
-    
-modalContent.appendChild(title)
-modalContent.appendChild(desc)
-modalContent.appendChild(dt)
-modalContent.appendChild(close)
 
-close.addEventListener("click",()=>{
+modalContent.style.display="block"
+
+    modalTitle.textContent=`Title: ${titleValue}`;;
+    modalDesc.textContent=`Description: ${descValue}`;
+    modalDue.textContent=`Due: ${dtValue}`
+
+
+modalClose.addEventListener("click",()=>{
     modalContent.style.display="none"
+
 })
 }
 
-}
 
-function editModal(tasks,id){
+function editModal(editid,idValue,checkBoxId){
+    console.log("checkbox id",checkBoxId);
+    
 update.style.display="block"
-console.log("edit the form and update the object",tasks,id,"---->",/*titleValue,descValue,dtValue*/);
-editTitle=document.querySelector(`#${id}`).previousSibling.previousSibling.lastChild.textContent
-// console.log(editTitle);
-const index= tasks.findIndex(ele=>ele.title==editTitle);
+editTitle=document.querySelector(`#${editid}`).previousSibling.previousSibling.lastChild.textContent
+
+let index= tasks.findIndex(ele=>ele.title==editTitle);
 console.log(index,"<--------");
 
 const edititngTask=tasks.filter(ele=>ele.title==editTitle);
-console.log(edititngTask[0].title,"*****");
-title.value=edititngTask[0].title;
-desc.value=edititngTask[0].description;
-dt.value=edititngTask[0].date
+title.value=tasks[index].title;
+desc.value=tasks[index].description;
+dt.value=tasks[index].date
+
+update.replaceWith(update.cloneNode(true)); 
+update = document.querySelector("#update");
 
 
-update.addEventListener("click",(event)=>{
-    event.preventDefault();
+update.addEventListener("click",handleUpdate)
+
+function handleUpdate(){
+   
     let newTask= {"title":title.value,"description":desc.value,"date":dt.value}
 
-    console.log("new task ---->",newTask,title,desc,dt);
-    
-    tasks[index]=newTask
-    // title.value='';
-    // desc.value='';
-    // dt.value=''
-    console.log(tasks);
-    
-})
+console.log("new task ---->",newTask,title,desc,dt);
+checkBoxId=title.value;
+tasks[index]=newTask
+    displayTask(tasks[index],editid,idValue,checkBoxId)
+    title.value = '';
+    desc.value = '';
+    dt.value = '';
+    update.style.display = "none";
+    modalContent.style.display = "none";
 
-
+    
+}
 }
 
-//implemented till clicking button that will generate tasks with a button upon clicking show button it should show modal but that isnt working properly

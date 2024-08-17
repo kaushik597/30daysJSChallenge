@@ -86,3 +86,7 @@ button{
 #update{
     display: none;
 }
+
+#no{
+    background-color: red;
+}
