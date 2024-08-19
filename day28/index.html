@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grubhub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header id="header-container">
+      <div id="header-left">
+        <img id="logo" src="assets/Grubhub Logo.png" />
+        <div id="delivery-type">
+          <p id="delivery">Delivery</p>
+          <p id="pickup">Pickup</p>
+        </div>
+        <div id="location-container">
+          <i class="fa-solid fa-location-dot"></i>
+          <p id="location-name">Raleigh, NC</p>
+        </div>
+
+        <div id="time-container">
+          <i class="fa-regular fa-clock"></i>
+          <p id="time">Now</p>
+        </div>
+      </div>
+      <div id="header-right">
+        <div id="input-container">
+          <i id="search-icon" class="fa-solid fa-magnifying-glass"></i>
+          <input
+            id="search-input"
+            type="text"
+            placeholder="Search for food, convenience, alcohol..."
+          />
+        </div>
+        <div id="sign">
+          <a href="#">Sign in</a>
+        </div>
+        <i id="cart" class="fa-solid fa-bag-shopping"></i>
+      </div>
+    </header>
+    <div id="ribbon-container">
+      <i
+        class="carousel-button prev-button fa-solid fa-chevron-left"
+        id="left-chevron"
+      ></i>
+      <div id="carousel"></div>
+      <i
+        class="carousel-button next-button fa-solid fa-chevron-right"
+        id="right-chevron"
+      ></i>
+    </div>
+    <div id="sticky-container">
+      <div id="res">
+        <span>Restaurants </span>
+        <i class="fa-solid fa-angle-down"></i>
+      </div>
+      <div id="str">
+        <span>4 Stars and Up</span>
+      </div>
+      <div id="ofr">
+        <span>Offers</span>
+      </div>
+      <div id="dlr">
+        <span>$0 Delivery</span>
+      </div>
+      <div id="minless">
+        <span>30 Minutes or Less</span>
+      </div>
+      <div id="plus">
+        <i
+          class="fa-solid fa-plus"
+          style="background-color: yellow; padding: 1px; margin: 1px"
+        ></i>
+        <span>Grubhub+</span>
+      </div>
+      <div id="open">
+        <span>Open Now</span>
+      </div>
+      <div id="catr">
+        <span>Catering</span>
+      </div>
+    </div>
+    <div id="show-container">
+      <h3 id="count">66 results</h3>
+      <div>
+        <span><b>Sort</b> (recommended)</span>
+        <i class="fa-solid fa-angle-down"></i>
+      </div>
+    </div>
+
+    <div id="res-container">
+       
+
+    </div>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
+
+

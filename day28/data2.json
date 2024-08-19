@@ -1,0 +1,924 @@
+{
+    "search_id": "301d8dd4-5d98-11ef-a522-8dfcf0826163",
+    "search_result": {
+        "stats": {
+            "total_results": 396,
+            "result_count": 0,
+            "page_size": 0,
+            "total_hits": 698
+        },
+        "pager": {
+            "total_pages": 1,
+            "current_page": 1
+        },
+        "bread_crumb": {
+            "crumb_list": [
+                {
+                    "facet_id": "open_now_menu",
+                    "facet_name": "Open Now Menu",
+                    "facet_value": "true",
+                    "hidden": false
+                },
+                {
+                    "facet_id": "open_now",
+                    "facet_name": "Open Now",
+                    "facet_value": "true",
+                    "hidden": false
+                },
+                {
+                    "facet_id": "order_type",
+                    "facet_name": "Order Type",
+                    "facet_value": "standard",
+                    "hidden": false
+                },
+                {
+                    "facet_id": "is_premium",
+                    "facet_name": "Is Premium",
+                    "facet_value": "true",
+                    "hidden": true
+                },
+                {
+                    "facet_id": "online_ordering_available",
+                    "facet_name": "Online Ordering Available",
+                    "facet_value": "true",
+                    "hidden": true
+                },
+                {
+                    "facet_id": "order_type_menu",
+                    "facet_name": "Order Type Menu",
+                    "facet_value": "standard",
+                    "hidden": false
+                },
+                {
+                    "facet_id": "has_menuitems",
+                    "facet_name": "Has Menuitems",
+                    "facet_value": "true",
+                    "hidden": false
+                },
+                {
+                    "facet_id": "menu_item_version",
+                    "facet_name": "Menu Item Version",
+                    "facet_value": "1",
+                    "hidden": false
+                }
+            ],
+            "query_text": "",
+            "selected_location": "POINT(-78.63817597 35.7795906)",
+            "current_sort": "default",
+            "override_sort": null,
+            "sort_direction": "desc",
+            "location_mode": "DELIVERY",
+            "radius": "1.0"
+        },
+        "sorts": [
+            {
+                "sort_id": "restaurant_name",
+                "field": "Restaurant Name",
+                "pretty_name": "Restaurant Name",
+                "fragment": "sorts=restaurant_name"
+            },
+            {
+                "sort_id": "price",
+                "field": "Price (Ascending)",
+                "pretty_name": "Price (Ascending)",
+                "fragment": "sorts=price"
+            },
+            {
+                "sort_id": "price_desc",
+                "field": "Price (Descending)",
+                "pretty_name": "Price (Descending)",
+                "fragment": "sorts=price_desc"
+            },
+            {
+                "sort_id": "avg_rating",
+                "field": "Rating",
+                "pretty_name": "Rating",
+                "fragment": "sorts=avg_rating"
+            },
+            {
+                "sort_id": "default",
+                "field": "Recommended",
+                "pretty_name": "Recommended",
+                "fragment": "sorts=default"
+            },
+            {
+                "sort_id": "distance",
+                "field": "Distance",
+                "pretty_name": "Distance",
+                "fragment": "sorts=distance"
+            },
+            {
+                "sort_id": "delivery_estimate",
+                "field": "Delivery Estimate",
+                "pretty_name": "Delivery Estimate",
+                "fragment": "sorts=delivery_estimate"
+            },
+            {
+                "sort_id": "delivery_minimum",
+                "field": "Delivery Minimum",
+                "pretty_name": "Delivery Minimum",
+                "fragment": "sorts=delivery_minimum"
+            }
+        ],
+        "facet_list": [
+            {
+                "id": "offer_category_type",
+                "name": "Offers",
+                "values": [
+                    {
+                        "value": "Offers",
+                        "count": 172,
+                        "link_fragment": "facet=offer_category_type%3AALL",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    }
+                ],
+                "style": "Text",
+                "multi": false,
+                "hidden": false,
+                "sequence": 1,
+                "slider_config": null,
+                "group": null,
+                "additional_values": true
+            },
+            {
+                "id": "subscription",
+                "name": "Grubhub+",
+                "values": [
+                    {
+                        "value": "Grubhub+",
+                        "count": 500,
+                        "link_fragment": "facet=subscription%3Atrue",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    }
+                ],
+                "style": "SingleValue",
+                "multi": false,
+                "hidden": false,
+                "sequence": 2,
+                "slider_config": null,
+                "group": null,
+                "additional_values": true
+            },
+            {
+                "id": "is_premium",
+                "name": "Is Premium",
+                "values": [
+                    {
+                        "value": "Is Premium",
+                        "count": 500,
+                        "link_fragment": "facet=is_premium%3Atrue",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    }
+                ],
+                "style": "SingleValue",
+                "multi": false,
+                "hidden": true,
+                "sequence": 3,
+                "slider_config": null,
+                "group": null,
+                "additional_values": true
+            },
+            {
+                "id": "cuisine",
+                "name": "Cuisine",
+                "values": [
+                    {
+                        "value": "American",
+                        "count": 299,
+                        "link_fragment": "facet=cuisine%3AAmerican",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": {
+                            "base_url": "https://res.cloudinary.com/grubhub-assets/image/upload/v1580916223/sunburst/search/",
+                            "public_id": "american",
+                            "format": "png",
+                            "tag": "primary_cuisine_fallback",
+                            "source": null,
+                            "scale_mode": null
+                        }
+                    },
+                    {
+                        "value": "Sandwiches",
+                        "count": 289,
+                        "link_fragment": "facet=cuisine%3ASandwiches",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    },
+                    {
+                        "value": "Chicken",
+                        "count": 262,
+                        "link_fragment": "facet=cuisine%3AChicken",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    },
+                    {
+                        "value": "Fast Food",
+                        "count": 172,
+                        "link_fragment": "facet=cuisine%3AFast+Food",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    },
+                    {
+                        "value": "Dessert",
+                        "count": 228,
+                        "link_fragment": "facet=cuisine%3ADessert",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": {
+                            "base_url": "https://res.cloudinary.com/grubhub-assets/image/upload/v1580916223/sunburst/search/",
+                            "public_id": "dessert",
+                            "format": "png",
+                            "tag": "primary_cuisine_fallback",
+                            "source": null,
+                            "scale_mode": null
+                        }
+                    },
+                    {
+                        "value": "Hamburgers",
+                        "count": 150,
+                        "link_fragment": "facet=cuisine%3AHamburgers",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    },
+                    {
+                        "value": "Kids Menu",
+                        "count": 74,
+                        "link_fragment": "facet=cuisine%3AKids+Menu",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    },
+                    {
+                        "value": "Coffee and Tea",
+                        "count": 113,
+                        "link_fragment": "facet=cuisine%3ACoffee+and+Tea",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    },
+                    {
+                        "value": "Mexican",
+                        "count": 105,
+                        "link_fragment": "facet=cuisine%3AMexican",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": {
+                            "base_url": "https://res.cloudinary.com/grubhub-assets/image/upload/v1580916223/sunburst/search/",
+                            "public_id": "mexican",
+                            "format": "png",
+                            "tag": "primary_cuisine_fallback",
+                            "source": null,
+                            "scale_mode": null
+                        }
+                    },
+                    {
+                        "value": "Vegetarian",
+                        "count": 76,
+                        "link_fragment": "facet=cuisine%3AVegetarian",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    },
+                    {
+                        "value": "Seafood",
+                        "count": 67,
+                        "link_fragment": "facet=cuisine%3ASeafood",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    },
+                    {
+                        "value": "Pizza",
+                        "count": 116,
+                        "link_fragment": "facet=cuisine%3APizza",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": {
+                            "base_url": "https://res.cloudinary.com/grubhub-assets/image/upload/v1580916223/sunburst/search/",
+                            "public_id": "pizza",
+                            "format": "png",
+                            "tag": "primary_cuisine_fallback",
+                            "source": null,
+                            "scale_mode": null
+                        }
+                    },
+                    {
+                        "value": "Breakfast",
+                        "count": 149,
+                        "link_fragment": "facet=cuisine%3ABreakfast",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": {
+                            "base_url": "https://res.cloudinary.com/grubhub-assets/image/upload/v1580916223/sunburst/search/",
+                            "public_id": "breakfast",
+                            "format": "png",
+                            "tag": "primary_cuisine_fallback",
+                            "source": null,
+                            "scale_mode": null
+                        }
+                    },
+                    {
+                        "value": "Asian",
+                        "count": 49,
+                        "link_fragment": "facet=cuisine%3AAsian",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": {
+                            "base_url": "https://res.cloudinary.com/grubhub-assets/image/upload/v1580916223/sunburst/search/",
+                            "public_id": "asian",
+                            "format": "png",
+                            "tag": "primary_cuisine_fallback",
+                            "source": null,
+                            "scale_mode": null
+                        }
+                    },
+                    {
+                        "value": "Lunch Specials",
+                        "count": 52,
+                        "link_fragment": "facet=cuisine%3ALunch+Specials",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    },
+                    {
+                        "value": "Soup",
+                        "count": 60,
+                        "link_fragment": "facet=cuisine%3ASoup",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    },
+                    {
+                        "value": "Bakery",
+                        "count": 72,
+                        "link_fragment": "facet=cuisine%3ABakery",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    },
+                    {
+                        "value": "Healthy",
+                        "count": 202,
+                        "link_fragment": "facet=cuisine%3AHealthy",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": {
+                            "base_url": "https://res.cloudinary.com/grubhub-assets/image/upload/v1580916223/sunburst/search/",
+                            "public_id": "healthy",
+                            "format": "png",
+                            "tag": "primary_cuisine_fallback",
+                            "source": null,
+                            "scale_mode": null
+                        }
+                    },
+                    {
+                        "value": "Chinese",
+                        "count": 25,
+                        "link_fragment": "facet=cuisine%3AChinese",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    },
+                    {
+                        "value": "Noodles",
+                        "count": 27,
+                        "link_fragment": "facet=cuisine%3ANoodles",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    },
+                    {
+                        "value": "Shakes",
+                        "count": 57,
+                        "link_fragment": "facet=cuisine%3AShakes",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    },
+                    {
+                        "value": "Steak",
+                        "count": 34,
+                        "link_fragment": "facet=cuisine%3ASteak",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    },
+                    {
+                        "value": "Smoothies and Juices",
+                        "count": 56,
+                        "link_fragment": "facet=cuisine%3ASmoothies+and+Juices",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    }
+                ],
+                "style": "Text",
+                "multi": true,
+                "hidden": false,
+                "sequence": 4,
+                "slider_config": null,
+                "group": null,
+                "additional_values": true
+            },
+            {
+                "id": "order_tracking_enabled",
+                "name": "Order Tracking Enabled",
+                "values": [
+                    {
+                        "value": "Order Tracking Enabled",
+                        "count": 500,
+                        "link_fragment": "facet=order_tracking_enabled%3Atrue",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    }
+                ],
+                "style": "SingleValue",
+                "multi": false,
+                "hidden": false,
+                "sequence": 5,
+                "slider_config": null,
+                "group": null,
+                "additional_values": true
+            },
+            {
+                "id": "delivery_offered",
+                "name": "Delivery Offered",
+                "values": [
+                    {
+                        "value": "Delivery Offered",
+                        "count": 500,
+                        "link_fragment": "facet=delivery_offered%3Atrue",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    }
+                ],
+                "style": "SingleValue",
+                "multi": false,
+                "hidden": true,
+                "sequence": 6,
+                "slider_config": null,
+                "group": null,
+                "additional_values": true
+            },
+            {
+                "id": "online_ordering_available",
+                "name": "Online Ordering Available",
+                "values": [
+                    {
+                        "value": "Online Ordering Available",
+                        "count": 500,
+                        "link_fragment": "facet=online_ordering_available%3Atrue",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    }
+                ],
+                "style": "SingleValue",
+                "multi": false,
+                "hidden": true,
+                "sequence": 7,
+                "slider_config": null,
+                "group": null,
+                "additional_values": false
+            },
+            {
+                "id": "new_restaurant",
+                "name": "New",
+                "values": [
+                    {
+                        "value": "New",
+                        "count": 33,
+                        "link_fragment": "facet=new_restaurant%3Atrue",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    }
+                ],
+                "style": "SingleValue",
+                "multi": false,
+                "hidden": false,
+                "sequence": 8,
+                "slider_config": null,
+                "group": null,
+                "additional_values": true
+            },
+            {
+                "id": "open_now",
+                "name": "Open Now",
+                "values": [
+                    {
+                        "value": "Open Now",
+                        "count": 500,
+                        "link_fragment": "facet=open_now%3Atrue",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    }
+                ],
+                "style": "SingleValue",
+                "multi": false,
+                "hidden": false,
+                "sequence": 9,
+                "slider_config": null,
+                "group": null,
+                "additional_values": true
+            },
+            {
+                "id": "free_delivery",
+                "name": "$0 Delivery",
+                "values": [
+                    {
+                        "value": "$0 Delivery",
+                        "count": 0,
+                        "link_fragment": "facet=free_delivery%3Atrue",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    }
+                ],
+                "style": "SingleValue",
+                "multi": false,
+                "hidden": false,
+                "sequence": 10,
+                "slider_config": null,
+                "group": null,
+                "additional_values": true
+            },
+            {
+                "id": "rating_v2",
+                "name": "Rating",
+                "values": [
+                    {
+                        "value": "4 Stars and Up",
+                        "count": 1,
+                        "link_fragment": "facet=rating%3A4.0",
+                        "range": {
+                            "start": "4",
+                            "end": "5"
+                        },
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    }
+                ],
+                "style": "SingleValue",
+                "multi": false,
+                "hidden": false,
+                "sequence": 11,
+                "slider_config": null,
+                "group": null,
+                "additional_values": false
+            },
+            {
+                "id": "price_rating",
+                "name": "Price",
+                "values": [
+                    {
+                        "value": "1 Only",
+                        "count": 1,
+                        "link_fragment": "facet=price_rating%3A1.0",
+                        "range": {
+                            "start": "1",
+                            "end": "1"
+                        },
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    },
+                    {
+                        "value": "2 And Below",
+                        "count": 1,
+                        "link_fragment": "facet=price_rating%3A2.0",
+                        "range": {
+                            "start": "1",
+                            "end": "2"
+                        },
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    },
+                    {
+                        "value": "3 And Below",
+                        "count": 1,
+                        "link_fragment": "facet=price_rating%3A3.0",
+                        "range": {
+                            "start": "1",
+                            "end": "3"
+                        },
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    },
+                    {
+                        "value": "4 And Below",
+                        "count": 1,
+                        "link_fragment": "facet=price_rating%3A4.0",
+                        "range": {
+                            "start": "1",
+                            "end": "4"
+                        },
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    },
+                    {
+                        "value": "5 And Below",
+                        "count": 1,
+                        "link_fragment": "facet=price_rating%3A5.0",
+                        "range": {
+                            "start": "1",
+                            "end": "5"
+                        },
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    }
+                ],
+                "style": "Dollars",
+                "multi": false,
+                "hidden": false,
+                "sequence": 12,
+                "slider_config": null,
+                "group": null,
+                "additional_values": false
+            },
+            {
+                "id": "pickup_offered",
+                "name": "Pickup Offered",
+                "values": [
+                    {
+                        "value": "Pickup Offered",
+                        "count": 500,
+                        "link_fragment": "facet=pickup_offered%3Atrue",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    }
+                ],
+                "style": "SingleValue",
+                "multi": false,
+                "hidden": true,
+                "sequence": 13,
+                "slider_config": null,
+                "group": null,
+                "additional_values": true
+            },
+            {
+                "id": "not_delivery_service",
+                "name": "Hide Delivery Services",
+                "values": [
+                    {
+                        "value": "Hide Delivery Services",
+                        "count": 500,
+                        "link_fragment": "facet=not_delivery_service%3Atrue",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    }
+                ],
+                "style": "SingleValue",
+                "multi": false,
+                "hidden": false,
+                "sequence": 14,
+                "slider_config": null,
+                "group": null,
+                "additional_values": true
+            },
+            {
+                "id": "delivery_time_v2",
+                "name": "Delivery Time",
+                "values": [
+                    {
+                        "value": "30 Minutes or Less",
+                        "count": 1,
+                        "link_fragment": "facet=delivery_time%3A30",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    }
+                ],
+                "style": "SingleValue",
+                "multi": false,
+                "hidden": false,
+                "sequence": 15,
+                "slider_config": null,
+                "group": null,
+                "additional_values": false
+            },
+            {
+                "id": "is_brand",
+                "name": "National Picks",
+                "values": [
+                    {
+                        "value": "National Picks",
+                        "count": 500,
+                        "link_fragment": "facet=is_brand%3Atrue",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    }
+                ],
+                "style": "SingleValue",
+                "multi": false,
+                "hidden": true,
+                "sequence": 16,
+                "slider_config": null,
+                "group": null,
+                "additional_values": true
+            },
+            {
+                "id": "shared_cart",
+                "name": "Shared Cart",
+                "values": [
+                    {
+                        "value": "Shared Cart",
+                        "count": 500,
+                        "link_fragment": "facet=shared_cart%3Atrue",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    }
+                ],
+                "style": "SingleValue",
+                "multi": false,
+                "hidden": false,
+                "sequence": 17,
+                "slider_config": null,
+                "group": null,
+                "additional_values": true
+            },
+            {
+                "id": "liquor_promo",
+                "name": "Alcohol Promo",
+                "values": [
+                    {
+                        "value": "Alcohol Promo",
+                        "count": 0,
+                        "link_fragment": "facet=liquor_promo%3Atrue",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    }
+                ],
+                "style": "SingleValue",
+                "multi": false,
+                "hidden": false,
+                "sequence": 18,
+                "slider_config": null,
+                "group": null,
+                "additional_values": true
+            },
+            {
+                "id": "restaurant_alcohol_promo",
+                "name": "Alcohol Promo",
+                "values": [
+                    {
+                        "value": "Alcohol Promo",
+                        "count": 0,
+                        "link_fragment": "facet=restaurant_alcohol_promo%3Atrue",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    }
+                ],
+                "style": "SingleValue",
+                "multi": false,
+                "hidden": false,
+                "sequence": 19,
+                "slider_config": null,
+                "group": null,
+                "additional_values": true
+            },
+            {
+                "id": "alcohol_store",
+                "name": "Alcohol Store",
+                "values": [
+                    {
+                        "value": "Alcohol Store",
+                        "count": 2,
+                        "link_fragment": "facet=alcohol_store%3Atrue",
+                        "range": null,
+                        "selected": false,
+                        "child_facet_value_list": null,
+                        "image": null
+                    }
+                ],
+                "style": "SingleValue",
+                "multi": false,
+                "hidden": true,
+                "sequence": 20,
+                "slider_config": null,
+                "group": null,
+                "additional_values": true
+            }
+        ],
+        "facet_base_links": null,
+        "results": [],
+        "count_omitting_open_times": {
+            "count": 841,
+            "enabled": true
+        },
+        "search_metrics": {
+            "searchMetrics-catering": {
+                "id": "searchMetrics-catering",
+                "value": 7.0
+            },
+            "searchMetrics-pickup": {
+                "id": "searchMetrics-pickup",
+                "value": 52.0
+            }
+        },
+        "market_context": {
+            "market_size": "LARGE",
+            "geohash": "dq25d9",
+            "adjusted_reasons": []
+        },
+        "rewrite_context": null,
+        "intent_search_context": null,
+        "tab_list": [],
+        "model_input_list": [],
+        "cache_context": {
+            "cacheKeys": [],
+            "restoredFromCache": false
+        }
+    },
+    "sponsored_result": {
+        "search_sponsored_id": "303d23d5-5d98-11ef-a522-5965bce3be83",
+        "stats": {
+            "total_results": 0,
+            "result_count": 0,
+            "page_size": 0,
+            "total_hits": 0
+        },
+        "results": []
+    },
+    "variation_ids": [
+        "exploreExploit",
+        "gorgonzola_control",
+        "control",
+        "truffle",
+        "item_search_control",
+        "sponsored_ads_poc"
+    ],
+    "search_metrics": null,
+    "dcp_response_info": {
+        "flow_name": "Search-OutsideCore4",
+        "group_name": "control",
+        "model_outputs": {}
+    },
+    "suggested_searches": [],
+    "restaurant_not_in_platform": false,
+    "restaurant_not_in_platform_object": null,
+    "favorite_restaurants": []
+}
