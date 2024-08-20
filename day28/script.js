@@ -52,6 +52,10 @@ async function fetchDetails() {
     
   })
 
+
+  const menuItems= await fetch("https://api-gtm.grubhub.com/restaurants/457735/menu_items/?menuItemIds=17573388340").then(res=>res.json()).then(data=>console.log("menu items",data)
+  )
+
 }
 
 function createRibbonItem(id, src, alt, name) {
@@ -115,12 +119,13 @@ function createRestaurantCard(resId,url,name,rating,time,price){
                 style="background-color: yellow; padding: 1px; margin: 1px"
               ></i>
                 <h4>${name}</h4>
-                <i class="fa-light fa-heart"></i>
+                <i class="fa-regular fa-heart"></i>
             </div>
             <div id="details">
-                <i class="fa-solid fa-star"></i>
-                <span>${rating} . </span>
-                <span>${time} min</span>
+                <i id="star" class="fa-solid fa-star"></i>
+                <span id="rating">${rating}</span>
+                <span id="dot">.</span>
+                <span id="time">${time} min</span>
             </div>
             <div id="price">
                 <span>${price} delivery</span>

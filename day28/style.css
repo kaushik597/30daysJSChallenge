@@ -2,6 +2,10 @@ body{
     font-family:"Roboto", Arial, Helvetica, sans-serif;
 }
 
+span{
+    color: rgb(103, 101, 101);
+    font-size: smaller;
+}
 #logo{
     width: 100px;
     margin: 5px;
@@ -147,11 +151,48 @@ a{
 }
 #res-container >div{
 margin: 5px;
-padding: 10px;
+padding: 5px;
 box-sizing: border-box;
 
 }
 #res-image{
-    width: 300px;
-    height: 100%;
+    border-radius: 10px;
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
 }
+
+#res-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 2px; */
+
+}
+
+
+#details{
+    /* display: flex;
+    align-items: flex-start;
+    justify-content: space-between; */
+    /* margin-left: 0px; */
+}
+
+#price{
+    padding-top: 5px;
+    display: flex;
+    justify-content: start;
+    /* align-items: center;  */
+}
+
+
+#details{
+    display: flex;
+    justify-content: start;
+}
+
+#star, #rating, #dot ,#time{
+    /* margin: 0px 5px; */
+    padding: 5px 5px 0px 0px;
+}  
+
