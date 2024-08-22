@@ -8,11 +8,11 @@ const feedbackContainer = document.querySelector("#feedback-container");
 const typeContainer = document.querySelector("#type-container");
 const categoryContainer = document.querySelector("#category-container");
 const menuItems = document.querySelector("#items");
-const cart= document.querySelector("#cart")
-const cartPageDetails= document.querySelector("#cart-details");
-const cartPageCard= document.querySelector("#cart-card")
+const cart = document.querySelector("#cart");
+const cartPageDetails = document.querySelector("#cart-details");
+const cartPageCard = document.querySelector("#cart-card");
 const cartTotal = document.querySelector("#total");
-const clearCart= document.querySelector("#clear-cart")
+const clearCart = document.querySelector("#clear-cart");
 async function getData1() {
   try {
     const response = await fetch("data.json");
@@ -144,11 +144,10 @@ async function showCuisineData() {
   const goodFood = `${data.restaurant_data.restaurant.faceted_rating_data.faceted_rating_list[2].positive_response_count}% Good food `;
   const onTimeDelivery = `${data.restaurant_data.restaurant.faceted_rating_data.faceted_rating_list[0].positive_response_count}% On time delivery `;
   const correctOrder = `${data.restaurant_data.restaurant.faceted_rating_data.faceted_rating_list[1].positive_response_count}% Correct order `;
- 
 
   cuisineData.map((cuisine) => {
     const p = document.createElement("p");
-    p.setAttribute("class","cuisine")
+    p.setAttribute("class", "cuisine");
     p.textContent = `${cuisine} , `;
     cuisineContainer.appendChild(p);
   });
@@ -158,13 +157,13 @@ async function showCuisineData() {
   restaurantTitle.appendChild(h1);
 
   const starRating = document.createElement("p");
-  starRating.textContent = rating+" . ";
+  starRating.textContent = rating + " . ";
 
   const starRatingCount = document.createElement("p");
-  starRatingCount.textContent = rating_count+" ratings . ";
+  starRatingCount.textContent = rating_count + " ratings . ";
 
   const addressData = document.createElement("p");
-  addressData.textContent = address+" . ";
+  addressData.textContent = address + " . ";
 
   const phoneData = document.createElement("p");
   phoneData.textContent = phone;
@@ -185,8 +184,7 @@ async function showCuisineData() {
   feedbackContainer.appendChild(ontime);
   feedbackContainer.appendChild(correct);
 
-
-  let cartItems=[]
+  let cartItems = [];
 
   data.menu_items.map((item) => {
     const itemCard = document.createElement("div");
@@ -223,72 +221,53 @@ async function showCuisineData() {
     namedDiv.appendChild(btn);
 
     menuItems.appendChild(itemCard);
-    btn.addEventListener("click",(e)=>{
-      cartItems.push(item)
+    btn.addEventListener("click", (e) => {
+      cartItems.push(item);
 
-      cart.textContent=cartItems.length
+      cart.textContent = cartItems.length;
 
-      localStorage.setItem("cart",JSON.stringify(cartItems))
-
-
-
-    })
-
-
-    
-   
+      localStorage.setItem("cart", JSON.stringify(cartItems));
+    });
   });
-
-
-  
-
 }
 
 fetchDetails();
 showCuisineData();
 
- function createCartCard(){
-  let cartData=JSON.parse(localStorage.getItem("cart"));
-  let total=0;
-  let accumalatedHtml=``;
-      cartData.map(item=>{
-        let url=item.media_image.base_url+item.media_image.public_id
-        let name = item.name
-        let price= parseInt(item.price.amount)/100
-        total+=parseFloat(price)
-        
-      let cardItems=`
+function createCartCard() {
+  let cartData = JSON.parse(localStorage.getItem("cart"));
+  let total = 0;
+  let accumalatedHtml = ``;
+  cartData.map((item) => {
+    let url = item.media_image.base_url + item.media_image.public_id;
+    let name = item.name;
+    let price = parseInt(item.price.amount) / 100;
+    total += parseFloat(price);
+
+    let cardItems = `
       <div id="${name}">
       <img class="cart-img" src="${url}" alt="${name}"/>
                   <p class="cart-item-name">${name}</p>
                   <p class="cart-price">${price}</p></div>`;
-                  
-                  accumalatedHtml+=cardItems
-       
 
-      })
+    accumalatedHtml += cardItems;
+  });
 
-      cartPageCard.innerHTML=accumalatedHtml
-      cartPageDetails.appendChild(cartPageCard)
+  cartPageCard.innerHTML = accumalatedHtml;
+  cartPageDetails.appendChild(cartPageCard);
 
-      const totalPrice=document.createElement("h1");
-      totalPrice.textContent=`TOTAL: ${total} $`
-      cartTotal.appendChild(totalPrice)
+  const totalPrice = document.createElement("h1");
+  totalPrice.textContent = `TOTAL: ${total} $`;
+  cartTotal.appendChild(totalPrice);
 
-      clearCart.addEventListener("click",(event)=>{        
-        event.preventDefault();
-        localStorage.removeItem("cart");
-        cartData=[];
-        cartPageDetails.innerHTML=''
-        totalPrice.innerHTML='';
-
-      })
-      
-    
-    
-    }
-createCartCard()
-
-
+  clearCart.addEventListener("click", (event) => {
+    event.preventDefault();
+    localStorage.removeItem("cart");
+    cartData = [];
+    cartPageDetails.innerHTML = "";
+    totalPrice.innerHTML = "";
+  });
+}
+createCartCard();
 
 //will work on checkout and payment page some other time
