@@ -11,6 +11,8 @@ const menuItems = document.querySelector("#items");
 const cart= document.querySelector("#cart")
 const cartPageDetails= document.querySelector("#cart-details");
 const cartPageCard= document.querySelector("#cart-card")
+const cartTotal = document.querySelector("#total");
+const clearCart= document.querySelector("#clear-cart")
 async function getData1() {
   try {
     const response = await fetch("data.json");
@@ -37,7 +39,6 @@ async function fetchDetails() {
 
   const ribbonData = data2.search_result.facet_list[3].values;
   const resDetails = data1.search_result.results;
-  //   console.log(resDetails);
 
   ribbonData.map((item) => {
     let id = item.value;
@@ -49,7 +50,6 @@ async function fetchDetails() {
   });
   carouselTransition();
   resDetails.map((res) => {
-    //resId,url,name,rating,time,price
     let resId = res.restaurant_id;
     let url = res.media_image.base_url + res.media_image.public_id;
     let name = res.name;
@@ -59,7 +59,6 @@ async function fetchDetails() {
       res.price_response.fee_display_setting.search_display_setting.styled_text
         .text;
 
-    console.log("values", resId, url, name, rating, time, price);
     createRestaurantCard(resId, url, name, rating, time, price);
   });
 }
@@ -145,18 +144,7 @@ async function showCuisineData() {
   const goodFood = `${data.restaurant_data.restaurant.faceted_rating_data.faceted_rating_list[2].positive_response_count}% Good food `;
   const onTimeDelivery = `${data.restaurant_data.restaurant.faceted_rating_data.faceted_rating_list[0].positive_response_count}% On time delivery `;
   const correctOrder = `${data.restaurant_data.restaurant.faceted_rating_data.faceted_rating_list[1].positive_response_count}% Correct order `;
-  console.log(
-    "res data",
-    cuisineData,
-    title,
-    rating,
-    rating_count,
-    address,
-    phone,
-    goodFood,
-    onTimeDelivery,
-    correctOrder
-  );
+ 
 
   cuisineData.map((cuisine) => {
     const p = document.createElement("p");
@@ -197,7 +185,6 @@ async function showCuisineData() {
   feedbackContainer.appendChild(ontime);
   feedbackContainer.appendChild(correct);
 
-  console.log("menu items", data.menu_items);
 
   let cartItems=[]
 
@@ -237,10 +224,7 @@ async function showCuisineData() {
 
     menuItems.appendChild(itemCard);
     btn.addEventListener("click",(e)=>{
-      console.log("button clicked",name.textContent);
-      // showCartCount(cartItems,)
       cartItems.push(item)
-      console.log(cartItems);
 
       cart.textContent=cartItems.length
 
@@ -262,41 +246,44 @@ async function showCuisineData() {
 
 fetchDetails();
 showCuisineData();
-// createCartCard(cartItems)
-
-// function showCartCount(cartItem,item,price){
-//   cartItems.push({item:price})
-
-  
-
-// }
-
-//completed till displaying menu items now i have to work on adding to cart and payment functionality
-
 
  function createCartCard(){
-  const cartData=JSON.parse(localStorage.getItem("cart"));
-      
-  console.log("cart data",cartData);
-
+  let cartData=JSON.parse(localStorage.getItem("cart"));
+  let total=0;
+  let accumalatedHtml=``;
       cartData.map(item=>{
         let url=item.media_image.base_url+item.media_image.public_id
         let name = item.name
         let price= parseInt(item.price.amount)/100
-        console.log(url,name, price);
+        total+=parseFloat(price)
         
-      let cardItems=`<img class="cart-img" src="${url}" alt="${name}"/>
+      let cardItems=`
+      <div id="${name}">
+      <img class="cart-img" src="${url}" alt="${name}"/>
                   <p class="cart-item-name">${name}</p>
-                  <p class="cart-price">${price}</p>`;
+                  <p class="cart-price">${price}</p></div>`;
                   
-        cartPageCard.innerHTML=cardItems
-        console.log(cartPageCard);
+                  accumalatedHtml+=cardItems
+       
 
-        console.log(cartPageCard);
-        
       })
+
+      cartPageCard.innerHTML=accumalatedHtml
       cartPageDetails.appendChild(cartPageCard)
 
+      const totalPrice=document.createElement("h1");
+      totalPrice.textContent=`TOTAL: ${total} $`
+      cartTotal.appendChild(totalPrice)
+
+      clearCart.addEventListener("click",(event)=>{        
+        event.preventDefault();
+        localStorage.removeItem("cart");
+        cartData=[];
+        cartPageDetails.innerHTML=''
+        totalPrice.innerHTML='';
+
+      })
+      
     
     
     }
@@ -304,4 +291,4 @@ createCartCard()
 
 
 
-//working on cart page if i show the data properly most of the work will be completed i should just calculate the price and submit for checkout and implement a form for payment i might not do the payment part
+//will work on checkout and payment page some other time
