@@ -20,13 +20,41 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- <h1>Welcome to menu page</h1> -->
-    <!-- //image
-  //cuisine
-  //title
-  //rating, no of people rated, address, phone no
-  //%good food, %on time delivery %correct order -->
-    <div id="image-container">
+  <header id="header-container">
+    <div id="header-left">
+      <img id="logo" src="assets/Grubhub Logo.png" />
+      <div id="delivery-type">
+        <p id="delivery">Delivery</p>
+        <p id="pickup">Pickup</p>
+      </div>
+      <div id="location-container">
+        <i class="fa-solid fa-location-dot"></i>
+        <p id="location-name">Raleigh, NC</p>
+      </div>
+
+      <div id="time-container">
+        <i class="fa-regular fa-clock"></i>
+        <p id="time">Now</p>
+      </div>
+    </div>
+    <div id="header-right">
+      <div id="input-container">
+        <i id="search-icon" class="fa-solid fa-magnifying-glass"></i>
+        <input
+          id="search-input"
+          type="text"
+          placeholder="Search for food, convenience, alcohol..."
+        />
+      </div>
+      <div id="sign">
+        <a href="#">Sign in</a>
+      </div>
+      <a href="cart.html">
+      <i id="cart" class="fa-solid fa-bag-shopping"></i>
+    </a>
+    </div>
+  </header>
+  <div id="image-container">
       <img
         id="menu-page-res-img"
         src="https://media-cdn.grubhub.com/image/upload/rmytkm96zvbh6sxx1oll"
@@ -46,23 +74,26 @@
 
     <div id="type-container">
       <div id="delivery-menu">
-        <h4>Delivery</h4>
+        <span>Delivery</span>
         <span>30-45 min</span>
       </div>
       <div id="pickup-menu">
-        <h4>Pickup</h4>
+        <span>Pickup</span>
         <span>6.2 mi . 10-25 min</span>
       </div>
     </div>
     <div id="preorder-container">
       <div id="pre-order">
-        <i class="fa-regular fa-clock"></i>
-        <h5>Preorder</h5>
+        <i id="clock-icon" class="fa-regular fa-clock"></i>
+        <h5 id="pre">Preorder</h5>
       </div>
+   
+    
       <div id="group-order">
-        <i class="fa-solid fa-user-group"></i>
-        <h5>start group order</h5>
+        <i id="group-icon" class="fa-solid fa-user-group"></i>
+        <h5 id="group">start group order</h5>
       </div>
+   
     </div>
 
     <div id="category-container">
@@ -73,7 +104,7 @@
       </div>
       <div>
         <i id="searchmenu" class="fa-solid fa-magnifying-glass"></i>
-        <input placeholder="Search" type="text" value="" />
+        <input id="searchmenu-input" placeholder="Search" type="text" value="" />
       </div>
     </div>
 

@@ -8,6 +8,9 @@ const feedbackContainer = document.querySelector("#feedback-container");
 const typeContainer = document.querySelector("#type-container");
 const categoryContainer = document.querySelector("#category-container");
 const menuItems = document.querySelector("#items");
+const cart= document.querySelector("#cart")
+const cartPageDetails= document.querySelector("#cart-details");
+const cartPageCard= document.querySelector("#cart-card")
 async function getData1() {
   try {
     const response = await fetch("data.json");
@@ -157,7 +160,8 @@ async function showCuisineData() {
 
   cuisineData.map((cuisine) => {
     const p = document.createElement("p");
-    p.textContent = `${cuisine},`;
+    p.setAttribute("class","cuisine")
+    p.textContent = `${cuisine} , `;
     cuisineContainer.appendChild(p);
   });
 
@@ -166,13 +170,13 @@ async function showCuisineData() {
   restaurantTitle.appendChild(h1);
 
   const starRating = document.createElement("p");
-  starRating.textContent = rating;
+  starRating.textContent = rating+" . ";
 
   const starRatingCount = document.createElement("p");
-  starRatingCount.textContent = rating_count;
+  starRatingCount.textContent = rating_count+" ratings . ";
 
   const addressData = document.createElement("p");
-  addressData.textContent = address;
+  addressData.textContent = address+" . ";
 
   const phoneData = document.createElement("p");
   phoneData.textContent = phone;
@@ -195,6 +199,8 @@ async function showCuisineData() {
 
   console.log("menu items", data.menu_items);
 
+  let cartItems=[]
+
   data.menu_items.map((item) => {
     const itemCard = document.createElement("div");
     itemCard.setAttribute("class", "item-card");
@@ -211,7 +217,7 @@ async function showCuisineData() {
 
     const namedDiv = document.createElement("div");
     namedDiv.setAttribute("class", "item-details");
-    const name = document.createElement("p");
+    const name = document.createElement("h4");
     name.textContent = item.name;
     namedDiv.appendChild(name);
 
@@ -230,10 +236,72 @@ async function showCuisineData() {
     namedDiv.appendChild(btn);
 
     menuItems.appendChild(itemCard);
+    btn.addEventListener("click",(e)=>{
+      console.log("button clicked",name.textContent);
+      // showCartCount(cartItems,)
+      cartItems.push(item)
+      console.log(cartItems);
+
+      cart.textContent=cartItems.length
+
+      localStorage.setItem("cart",JSON.stringify(cartItems))
+
+
+
+    })
+
+
+    
+   
   });
+
+
+  
+
 }
 
 fetchDetails();
 showCuisineData();
+// createCartCard(cartItems)
+
+// function showCartCount(cartItem,item,price){
+//   cartItems.push({item:price})
+
+  
+
+// }
 
 //completed till displaying menu items now i have to work on adding to cart and payment functionality
+
+
+ function createCartCard(){
+  const cartData=JSON.parse(localStorage.getItem("cart"));
+      
+  console.log("cart data",cartData);
+
+      cartData.map(item=>{
+        let url=item.media_image.base_url+item.media_image.public_id
+        let name = item.name
+        let price= parseInt(item.price.amount)/100
+        console.log(url,name, price);
+        
+      let cardItems=`<img class="cart-img" src="${url}" alt="${name}"/>
+                  <p class="cart-item-name">${name}</p>
+                  <p class="cart-price">${price}</p>`;
+                  
+        cartPageCard.innerHTML=cardItems
+        console.log(cartPageCard);
+
+        console.log(cartPageCard);
+        
+      })
+      cartPageDetails.appendChild(cartPageCard)
+
+    
+    
+    }
+createCartCard()
+
+
+
+//working on cart page if i show the data properly most of the work will be completed i should just calculate the price and submit for checkout and implement a form for payment i might not do the payment part
